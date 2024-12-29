@@ -14,7 +14,19 @@ $ ./gradlew jar
 ```
 
 ## How to use
-### TODO
+### Create expense
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar ....
+java -jar expense-tracker-1.0-SNAPSHOT.jar add --description "Coffe" --amount 40
+```
+### List expenses
+```
+java -jar expense-tracker-1.0-SNAPSHOT.jar list
+```
+### Delete expense
+```
+java -jar expense-tracker-1.0-SNAPSHOT.jar delete --id <id>
+```
+### Expense summary
+```
+java -jar expense-tracker-1.0-SNAPSHOT.jar summary
 ```
