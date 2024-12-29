@@ -18,6 +18,10 @@ $ ./gradlew jar
 ```
 java -jar expense-tracker-1.0-SNAPSHOT.jar add --description "Coffe" --amount 40
 ```
+### Update expense
+```
+java -jar expense-tracker-1.0-SNAPSHOT.jar update --id <id> --description "Ticket" --amount 70
+```
 ### List expenses
 ```
 java -jar expense-tracker-1.0-SNAPSHOT.jar list

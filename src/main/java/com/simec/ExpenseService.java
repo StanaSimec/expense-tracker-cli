@@ -1,7 +1,6 @@
 package com.simec;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.simec.action.ActionNotFoundException;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,8 +38,19 @@ public class ExpenseService {
         List<Expense> expenses = findAll();
         Expense expense = expenses.stream().filter(e -> e.getId() == id)
                 .findAny()
-                .orElseThrow(() -> new ActionNotFoundException("Expense not found"));
+                .orElseThrow(() -> new ExpenseNotFound("Expense not found"));
         expenses.remove(expense);
+        return saveExpenses(expenses);
+    }
+
+    public boolean updateExpense(int id, String description, int amount) {
+        List<Expense> expenses = findAll();
+        Expense expense = expenses.stream().filter(e -> e.getId() == id)
+                .findAny()
+                .orElseThrow(() -> new ExpenseNotFound("Expense not found"));
+
+        expense.setDescription(description);
+        expense.setAmount(amount);
         return saveExpenses(expenses);
     }
 
