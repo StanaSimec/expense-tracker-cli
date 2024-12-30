@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class ExpenseService {
@@ -19,7 +21,7 @@ public class ExpenseService {
 
     public boolean create(String description, int amount) {
         List<Expense> expenseList = findAll();
-        Expense expense = new Expense(expenseList.size() + 1, description, amount);
+        Expense expense = new Expense(expenseList.size() + 1, description, amount, Date.from(Instant.now()));
         expenseList.add(expense);
         return saveExpenses(expenseList);
     }
