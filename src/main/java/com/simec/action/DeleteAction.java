@@ -1,5 +1,6 @@
 package com.simec.action;
 
+import com.simec.ExpenseNotFoundException;
 import com.simec.ExpenseService;
 
 import java.util.regex.Pattern;
@@ -21,7 +22,11 @@ public class DeleteAction implements Action {
             return;
         }
 
-        boolean isDeleted = expenseService.deleteById(Integer.parseInt(args[2]));
-        System.out.println(isDeleted ? "Expense deleted" : "Expense not deleted");
+        try {
+            boolean isDeleted = expenseService.deleteById(Integer.parseInt(args[2]));
+            System.out.println(isDeleted ? "Expense deleted" : "Expense not deleted");
+        } catch (ExpenseNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

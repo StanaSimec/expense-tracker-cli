@@ -2,6 +2,7 @@ package com.simec;
 
 import com.simec.action.Action;
 import com.simec.action.ActionFactory;
+import com.simec.action.ActionNotFoundException;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +11,11 @@ public class Main {
             return;
         }
         String actionName = args[0];
-        Action action = ActionFactory.fromName(actionName);
-        action.execute(args);
+        try {
+            Action action = ActionFactory.fromName(actionName);
+            action.execute(args);
+        } catch (ActionNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

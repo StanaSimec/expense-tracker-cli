@@ -40,7 +40,7 @@ public class ExpenseService {
         List<Expense> expenses = findAll();
         Expense expense = expenses.stream().filter(e -> e.getId() == id)
                 .findAny()
-                .orElseThrow(() -> new ExpenseNotFound("Expense not found"));
+                .orElseThrow(() -> new ExpenseNotFoundException("Expense not found"));
         expenses.remove(expense);
         return saveExpenses(expenses);
     }
@@ -49,7 +49,7 @@ public class ExpenseService {
         List<Expense> expenses = findAll();
         Expense expense = expenses.stream().filter(e -> e.getId() == id)
                 .findAny()
-                .orElseThrow(() -> new ExpenseNotFound("Expense not found"));
+                .orElseThrow(() -> new ExpenseNotFoundException("Expense not found"));
 
         expense.setDescription(description);
         expense.setAmount(amount);

@@ -1,5 +1,6 @@
 package com.simec.action;
 
+import com.simec.ExpenseNotFoundException;
 import com.simec.ExpenseService;
 
 import java.util.regex.Pattern;
@@ -21,7 +22,11 @@ public class UpdateAction implements Action {
             return;
         }
 
-        boolean isUpdated = expenseService.updateExpense(Integer.parseInt(args[2]), args[4], Integer.parseInt(args[6]));
-        System.out.println(isUpdated ? "Expense updated" : "Expense not updated");
+        try {
+            boolean isUpdated = expenseService.updateExpense(Integer.parseInt(args[2]), args[4], Integer.parseInt(args[6]));
+            System.out.println(isUpdated ? "Expense updated" : "Expense not updated");
+        } catch (ExpenseNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
