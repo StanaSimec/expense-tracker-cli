@@ -34,3 +34,7 @@ java -jar expense-tracker-1.0-SNAPSHOT.jar delete --id <id>
 ```
 java -jar expense-tracker-1.0-SNAPSHOT.jar summary
 ```
+### Expense summary by month
+```
+java -jar expense-tracker-1.0-SNAPSHOT.jar summary --month 9
+```
