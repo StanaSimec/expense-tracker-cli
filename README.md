@@ -13,12 +13,12 @@ $ cd expense-tracker-cli/build
 ```
 javac -cp "build/libs/*" -d ./build ./src/tracker/*.java
 ```
-### Create jar file
-## Go to build directory
+## Create jar file
+### Go to build directory
 ```
 cd build
 ```
-## Create jar
+### Create jar
 ```
 jar cmf manifest.txt Tracker.jar tracker/*.class
 ```
