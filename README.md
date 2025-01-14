@@ -6,35 +6,44 @@
 ### Open project
 ```
 $ git clone <project url>
-$ cd expense-tracker
+$ cd expense-tracker-cli/build
 ```
-### Run Jar Gradle task
+## Build project
+### Compile files
 ```
-$ ./gradlew jar
+javac -cp "build/libs/*" -d ./build ./src/tracker/*.java
 ```
-
+### Create jar file
+## Go to build directory
+```
+cd build
+```
+## Create jar
+```
+jar cmf manifest.txt Tracker.jar tracker/*.class
+```
 ## How to use
 ### Create expense
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar add --description "Coffe" --amount 40
+java -jar Tracker.jar add --description "Coffe" --amount 40
 ```
 ### Update expense
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar update --id <id> --description "Ticket" --amount 70
+java -jar Tracker.jar update --id <id> --description "Ticket" --amount 70
 ```
 ### List expenses
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar list
+java -jar Tracker.jar list
 ```
 ### Delete expense
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar delete --id <id>
+java -jar Tracker.jar delete --id <id>
 ```
 ### Expense summary
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar summary
+java -jar Tracker.jar summary
 ```
 ### Expense summary by month
 ```
-java -jar expense-tracker-1.0-SNAPSHOT.jar summary --month 9
+java -jar Tracker.jar summary --month 9
 ```

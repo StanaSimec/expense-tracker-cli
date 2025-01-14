@@ -1,4 +1,4 @@
-package com.simec;
+package tracker;
 
 public class ExpenseNotFoundException extends RuntimeException {
     public ExpenseNotFoundException(String message) {

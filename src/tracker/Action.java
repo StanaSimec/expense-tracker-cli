@@ -1,4 +1,4 @@
-package com.simec.action;
+package tracker;
 
 public interface Action {
     void execute(String[] args);

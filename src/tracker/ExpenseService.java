@@ -1,4 +1,4 @@
-package com.simec;
+package tracker;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

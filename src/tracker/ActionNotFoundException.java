@@ -1,4 +1,4 @@
-package com.simec.action;
+package tracker;
 
 public class ActionNotFoundException extends RuntimeException {
     public ActionNotFoundException(String message) {
