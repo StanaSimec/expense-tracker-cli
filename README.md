@@ -5,8 +5,8 @@
 ## Project setup
 ### Open project
 ```
-$ git clone <project url>
-$ cd expense-tracker-cli/build
+$ git clone git@github.com:StanaSimec/expense-tracker-cli.git
+$ cd expense-tracker-cli
 ```
 ## Build project
 ### Compile files
